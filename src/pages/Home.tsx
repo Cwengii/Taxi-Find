@@ -14,7 +14,8 @@ import {
   Car,
   Shield,
   Users,
-  Zap
+  Zap,
+  Share2
 } from "lucide-react";
 import heroImage from "@/assets/hero-welcome.jpg";
 
@@ -59,15 +60,15 @@ const Home = () => {
         <div className="absolute inset-0 flex items-center px-6">
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Find Safe <span className="text-orange-400">Transport</span> in Your Kasi
+              Find Your <span className="text-orange-400">Taxi</span> Fast
             </h1>
-            <p className="text-xl mb-6">Community-powered safe route finder for Gauteng townships</p>
+            <p className="text-xl mb-6">TaxiFind - Your trusted taxi locator for Gauteng townships</p>
             <div className="flex gap-4">
               <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-bold px-8">
                 <Navigation className="w-5 h-5 mr-2" />
                 Find My Ride
               </Button>
-              <Button variant="outline" className="border-cream text-cream hover:bg-cream hover:text-black">
+              <Button variant="outline" className="border-cream text-black hover:bg-cream hover:text-black">
                 Learn More
               </Button>
             </div>
@@ -78,7 +79,7 @@ const Home = () => {
         {/* Features Section */}
         <div className="py-16 px-6 bg-gray-50/95 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose SafeRide Finder?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose TaxiFind?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -109,7 +110,7 @@ const Home = () => {
         <div className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="bg-cream rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-6 text-center">Find Your Safe Route Now</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">Find Your Taxi Now</h3>
             <div className="relative mb-6">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input 
@@ -171,22 +172,42 @@ const Home = () => {
               </div>
             )}
 
-            <div className="flex gap-4 mt-6">
+            <div className="space-y-3 mt-6">
               <Button 
-                className="flex-1 bg-yellow-400 text-black hover:bg-yellow-500 font-bold"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-bold"
                 onClick={() => setShowDestination(true)}
               >
                 <Navigation className="w-5 h-5 mr-2" />
-                Find Safe Route
+                Find My Taxi
               </Button>
-              <Button 
-                variant="outline" 
-                className="flex-1 border-red-400 text-red-600 hover:bg-red-50" 
-                onClick={() => navigate("/report")}
-              >
-                <AlertCircle className="w-5 h-5 mr-2" />
-                Report Issue
-              </Button>
+              
+              <div className="flex gap-3">
+                <Button 
+                  variant="outline" 
+                  className="flex-1 border-blue-400 text-blue-600 hover:bg-blue-50" 
+                  onClick={() => {
+                    const message = `I'm taking a taxi from MTN Main Gate Rank to Sandton. Track my journey on TaxiFind app. Pickup: MTN Main Gate, Destination: Sandton, Time: ${new Date().toLocaleTimeString()}`;
+                    if (navigator.share) {
+                      navigator.share({ title: 'My Taxi Route', text: message });
+                    } else {
+                      navigator.clipboard.writeText(message);
+                      alert('Route info copied to clipboard!');
+                    }
+                  }}
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share Trip
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="flex-1 border-red-400 text-red-600 hover:bg-red-50" 
+                  onClick={() => navigate("/report")}
+                >
+                  <AlertCircle className="w-4 h-4 mr-2" />
+                  Report Issue
+                </Button>
+              </div>
             </div>
           </div>
         </div>

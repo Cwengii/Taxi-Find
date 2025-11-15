@@ -1,5 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
-import logoImage from "@/assets/download (20).jpeg";
+import { MapPin, Phone, Mail, Car } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,8 +6,10 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logoImage} alt="SafeRide Finder" className="w-8 h-8 rounded-full" />
-            <span className="font-bold">SafeRide Finder</span>
+            <div className="bg-orange-500 p-1.5 rounded-full">
+              <Car className="w-4 h-4 text-white" />
+            </div>
+            <span className="font-bold">TaxiFind</span>
           </div>
           <p className="text-orange-300 text-sm">Making transport safer for everyone in Gauteng townships.</p>
         </div>
@@ -53,7 +54,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-800 mt-6 pt-4 text-center text-sm text-orange-300">
-        <p>&copy; 2024 SafeRide Finder. All rights reserved. | Making transport safer for everyone</p>
+        <p>&copy; 2024 TaxiFind. All rights reserved. | Making transport safer for everyone</p>
       </div>
     </footer>
   );
