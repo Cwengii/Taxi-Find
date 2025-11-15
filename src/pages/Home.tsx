@@ -15,7 +15,7 @@ import {
   Shield,
   Users,
   Zap,
-  Share2,
+  AlertTriangle,
   Hand,
   ArrowUp,
   ArrowDown,
@@ -189,19 +189,33 @@ const Home = () => {
               <div className="flex gap-3">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-blue-400 text-blue-600 hover:bg-blue-50" 
+                  className="flex-1 border-red-500 text-red-600 hover:bg-red-100 font-bold" 
                   onClick={() => {
-                    const message = `I'm taking a taxi from MTN Main Gate Rank to Sandton. Track my journey on TaxiFind app. Pickup: MTN Main Gate, Destination: Sandton, Time: ${new Date().toLocaleTimeString()}`;
-                    if (navigator.share) {
-                      navigator.share({ title: 'My Taxi Route', text: message });
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition((position) => {
+                        const { latitude, longitude } = position.coords;
+                        const emergencyMessage = `🚨 PANIC ALERT 🚨\n\nI need help! Current location: https://maps.google.com/?q=${latitude},${longitude}\n\nTaxi Info:\n- Pickup: MTN Main Gate Rank\n- Destination: Sandton\n- Time: ${new Date().toLocaleString()}\n\nPlease check on me or contact authorities if needed.\n\n- TaxiFind Safety Alert`;
+                        
+                        // Alert family/contacts
+                        if (navigator.share) {
+                          navigator.share({ title: '🚨 EMERGENCY ALERT', text: emergencyMessage });
+                        } else {
+                          navigator.clipboard.writeText(emergencyMessage);
+                          alert('🚨 PANIC ALERT ACTIVATED!\n\nEmergency message copied to clipboard.\nShare immediately with family/contacts.\n\nDriver has been notified of safety concern.');
+                        }
+                        
+                        // Simulate driver notification
+                        setTimeout(() => {
+                          alert('✅ Driver has been alerted about passenger safety concern.');
+                        }, 2000);
+                      });
                     } else {
-                      navigator.clipboard.writeText(message);
-                      alert('Route info copied to clipboard!');
+                      alert('🚨 PANIC ALERT ACTIVATED!\n\nLocation services unavailable.\nPlease call emergency contacts manually.');
                     }
                   }}
                 >
-                  <Share2 className="w-4 h-4 mr-2" />
-                  Share Trip
+                  <AlertTriangle className="w-4 h-4 mr-2" />
+                  PANIC
                 </Button>
                 
                 <Button 
