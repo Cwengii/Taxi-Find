@@ -52,7 +52,7 @@ const Home = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Find Safe <span className="text-yellow-400">Transport</span> in Your Kasi
             </h1>
-            <p className="text-xl mb-6">MTN-powered safe route finder for Gauteng townships</p>
+            <p className="text-xl mb-6">Community-powered safe route finder for Gauteng townships</p>
             <div className="flex gap-4">
               <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-bold px-8">
                 <Navigation className="w-5 h-5 mr-2" />
@@ -89,8 +89,8 @@ const Home = () => {
               <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">MTN Fast</h3>
-              <p className="text-gray-600">Lightning-fast directions powered by MTN network</p>
+              <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
+              <p className="text-gray-600">Quick and reliable directions when you need them most</p>
             </div>
           </div>
         </div>

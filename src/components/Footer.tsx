@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import logoImage from "@/assets/download (20).jpeg";
 
 const Footer = () => {
   return (
@@ -6,9 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="bg-yellow-400 p-1 rounded">
-              <span className="text-black font-bold text-sm">MTN</span>
-            </div>
+            <img src={logoImage} alt="SafeRide Finder" className="w-8 h-8 rounded-full" />
             <span className="font-bold">SafeRide Finder</span>
           </div>
           <p className="text-gray-400 text-sm">Making transport safer for everyone in Gauteng townships.</p>
@@ -54,7 +53,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-800 mt-6 pt-4 text-center text-sm text-gray-400">
-        <p>&copy; 2024 MTN SafeRide Finder. All rights reserved. | Powered by MTN South Africa</p>
+        <p>&copy; 2024 SafeRide Finder. All rights reserved. | Making transport safer for everyone</p>
       </div>
     </footer>
   );

@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, MapPin } from "lucide-react";
+import logoImage from "@/assets/download (20).jpeg";
 
 const Navbar = () => {
   return (
     <nav className="bg-yellow-400 shadow-lg px-4 py-3 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <div className="bg-black p-2 rounded">
-          <span className="text-yellow-400 font-bold text-lg">MTN</span>
-        </div>
+        <img src={logoImage} alt="SafeRide Finder" className="w-10 h-10 rounded-full" />
         <span className="font-bold text-black text-xl">SafeRide Finder</span>
       </div>
       
