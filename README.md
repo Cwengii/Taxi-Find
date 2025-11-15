@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+🚨 SafeRide Finder: Safe Transport Point Navigation for Gauteng
 
-## Project info
+Project Overview
 
-**URL**: https://lovable.dev/projects/f9dbc6c5-5506-445c-8f27-a068482443f1
+This report proposes SafeRide Finder, a dedicated mobile application designed to address the severe transport safety deficiencies in Gauteng, particularly the high vulnerability of pedestrians navigating to public transport pickup points.
 
-## How can I edit this code?
+The app's core value is to transform the most dangerous part of the public transport journey—the walk to the pickup point—into the safest, utilizing localized safety data, community reporting, and low-data design principles.
 
-There are several ways of editing your application.
+The Problem Statement
 
-**Use Lovable**
+The challenge is not the availability of taxis, but the fact that the digital and physical environment of transport access is hostile, unsafe, and unreliable. Users are often unable to find established, safe transport points (like taxi ranks) and are forced onto walking routes that expose them to disproportionate risks due to poor infrastructure and crime.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f9dbc6c5-5506-445c-8f27-a068482443f1) and start prompting.
+📊 Core Justification & Evidence (Gauteng Context)
 
-Changes made via Lovable will be committed automatically to this repo.
+The need for SafeRide Finder is directly aligned with findings from the Gauteng Department of Community Safety (GDCS) and related provincial reports.
 
-**Use your preferred IDE**
+1. High Pedestrian Vulnerability
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Fatal Risk: Pedestrians account for nearly half of all road fatalities in Gauteng, with pedestrian deaths increasing by 48.7% between 2020 and 2021.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Gap in Intervention: While GDCS conducts Pedestrian Operations, law enforcement efforts alone are not achieving necessary reduction targets, necessitating a user-focused, proactive tool.
 
-Follow these steps:
+Design Focus: Pedestrian safety must be the primary focus of the app’s navigation, ensuring the guidance system prioritizes the safest walking route (using illumination/hazard data) over merely the nearest route.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Poorly Defined Routes and Infrastructure Failures
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Vandalism & Visibility: Widespread vandalism of streetlights and traffic signals plunges transport corridors into darkness, creating major safety and visibility issues that make finding and reaching a transport spot impossible.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Unverified Stops: Extensive law enforcement targeting route compliance among public transport operators highlights the danger of unverified or non-compliant stops.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Safety Dissatisfaction: Households report high dissatisfaction with minibus taxis, specifically citing safety and security concerns, which the app addresses by providing confident navigation to legitimate starting points.
 
-**Edit a file directly in GitHub**
+3. Low Digital and Data Constraints
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Access Constraints: The app must be built for a market characterized by low-data, low-mobile usage, and patchy coverage.
 
-**Use GitHub Codespaces**
+Necessity for Offline: A user who is lost or in danger cannot afford to stream map data. The solution requires route finding and core map rendering to rely on pre-downloaded local data (Offline Mode).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Alignment with E-Policing: The app's proposed real-time safety features align with the provincial government's existing roll-out of e-policing solutions (like the e-Panic button and CCTV cameras).
 
-## What technologies are used for this project?
+✨ Proposed Core Features (Design Implications)
 
-This project is built with:
+Based on the evidence, SafeRide Finder is designed around the following key features:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Feature
 
-## How can I deploy this project?
+Justification / Value Proposition
 
-Simply open [Lovable](https://lovable.dev/projects/f9dbc6c5-5506-445c-8f27-a068482443f1) and click on Share -> Publish.
+Safe Path Highlighting (Screen 5)
 
-## Can I connect a custom domain to my Lovable project?
+Provides dynamic routing that guides users along the safest, best-lit paths to their destination, actively accounting for reported "dark areas" or temporary hazards.
 
-Yes, you can!
+Community Hazard Reporter (Screen 6)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Enables users to crowdsource real-time data on poor lighting, broken infrastructure, and temporary dangers, allowing the app to dynamically update the Safe Path.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Verified Transport Points
+
+Guides users exclusively to official, legitimate, and known taxi ranks or bus stops, helping them avoid non-compliant or potentially dangerous informal stops.
+
+Offline Mode
+
+Ensures the core map rendering and safe route finding capabilities function reliably even in areas with patchy or low 3G/4G coverage, conserving user data.
+
+Safety Alerts & Integration (Screen 8)
+
+Future-proofed feature for sending safety alerts and potential integration with existing government e-policing rollouts (CCTV, e-Panic buttons) to enhance real-time response.
+
+📺 Related Context
+
+For more context on the crime and safety challenges in Gauteng, particularly concerning police operations, please view the following analysis: Gauteng 4th Quarter Crime Statistics
