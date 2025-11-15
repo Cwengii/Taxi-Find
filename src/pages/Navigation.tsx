@@ -82,7 +82,7 @@ const Navigation = () => {
 
           {/* Hazard Warning on Route */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="bg-destructive/90 backdrop-blur-sm p-2 rounded-lg shadow-lg flex items-center gap-2 text-xs text-destructive-foreground">
+            <div className="bg-red-500 p-2 rounded-lg shadow-lg flex items-center gap-2 text-xs text-white">
               <AlertTriangle className="w-4 h-4" />
               <span>Dark Patch</span>
             </div>
@@ -90,23 +90,23 @@ const Navigation = () => {
 
           {/* Safety Status Badge */}
           <div className="absolute top-4 left-4">
-            <Badge className="bg-safe text-safe-foreground shadow-[var(--shadow-medium)] px-3 py-2">
-              <ShieldCheck className="w-4 h-4 mr-1" />
-              Safe Route Active
-            </Badge>
+            <div className="bg-green-500 text-white px-3 py-2 rounded-lg shadow-md flex items-center gap-1">
+              <ShieldCheck className="w-4 h-4" />
+              <span className="text-sm font-medium">Safe Route Active</span>
+            </div>
           </div>
 
           {/* ETA Badge */}
           <div className="absolute top-4 right-4">
-            <Badge className="bg-card text-card-foreground shadow-[var(--shadow-medium)] px-3 py-2 border border-border">
-              <Clock className="w-4 h-4 mr-1" />
-              3 min remaining
-            </Badge>
+            <div className="bg-white text-black px-3 py-2 rounded-lg shadow-md border-2 border-yellow-400 flex items-center gap-1">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm font-medium">3 min remaining</span>
+            </div>
           </div>
         </div>
 
         {/* Navigation Instructions Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 bg-card/95 backdrop-blur-lg border-t border-border rounded-t-3xl shadow-[var(--shadow-medium)] p-6 animate-slide-up">
+        <div className="absolute bottom-0 left-0 right-0 bg-white border-t-2 border-yellow-400 rounded-t-3xl shadow-lg p-6">
           <div className="mb-6">
             {steps[currentStep] && (
               <>
@@ -125,10 +125,10 @@ const Navigation = () => {
                 </div>
 
                 {steps[currentStep].warning && (
-                  <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-3 mb-4">
+                  <div className="bg-red-50 border-2 border-red-200 rounded-lg p-3 mb-4">
                     <div className="flex items-center gap-2">
-                      <AlertTriangle className="w-5 h-5 text-destructive" />
-                      <p className="text-sm font-medium text-destructive">
+                      <AlertTriangle className="w-5 h-5 text-red-600" />
+                      <p className="text-sm font-medium text-red-700">
                         {steps[currentStep].warning}
                       </p>
                     </div>
