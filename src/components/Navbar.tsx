@@ -11,13 +11,13 @@ const Navbar = () => {
       </div>
       
       <div className="hidden md:flex items-center gap-6">
-        <a href="#home" className="text-black hover:text-gray-700 font-medium">Home</a>
-        <a href="#about" className="text-black hover:text-gray-700 font-medium">About</a>
-        <a href="#contact" className="text-black hover:text-gray-700 font-medium">Contact</a>
+        <a href="#home" className="text-black hover:text-orange-500 font-medium">Home</a>
+        <a href="#about" className="text-black hover:text-orange-500 font-medium">About</a>
+        <a href="#contact" className="text-black hover:text-orange-500 font-medium">Contact</a>
       </div>
 
       <div className="flex items-center gap-2">
-        <Button variant="outline" size="sm" className="hidden md:flex border-black text-black hover:bg-black hover:text-yellow-400">
+        <Button variant="outline" size="sm" className="hidden md:flex border-black text-black hover:bg-orange-500 hover:text-cream">
           <Phone className="w-4 h-4 mr-1" />
           Help
         </Button>

@@ -36,21 +36,30 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <div className="min-h-screen bg-background relative">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="Busy MTN Taxi Rank Background" 
+          className="w-full h-full object-cover opacity-20"
+        />
+      </div>
+      <div className="relative z-10">
+        <Navbar />
       
       {/* Hero Section */}
       <div className="relative h-96 overflow-hidden">
         <img 
           src={heroImage} 
-          alt="Kasi Transport Hub" 
+          alt="Busy MTN Taxi Rank" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="absolute inset-0 flex items-center px-6">
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Find Safe <span className="text-yellow-400">Transport</span> in Your Kasi
+              Find Safe <span className="text-orange-400">Transport</span> in Your Kasi
             </h1>
             <p className="text-xl mb-6">Community-powered safe route finder for Gauteng townships</p>
             <div className="flex gap-4">
@@ -58,7 +67,7 @@ const Home = () => {
                 <Navigation className="w-5 h-5 mr-2" />
                 Find My Ride
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+              <Button variant="outline" className="border-cream text-cream hover:bg-cream hover:text-black">
                 Learn More
               </Button>
             </div>
@@ -66,8 +75,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="py-16 px-6 bg-gray-50">
+        {/* Features Section */}
+        <div className="py-16 px-6 bg-gray-50/95 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose SafeRide Finder?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -79,7 +88,7 @@ const Home = () => {
               <p className="text-gray-600">Community-verified safe walking paths to transport hubs</p>
             </div>
             <div className="text-center">
-              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Community Powered</h3>
@@ -96,10 +105,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Search Section */}
-      <div className="py-12 px-6">
+        {/* Search Section */}
+        <div className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-cream rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-6 text-center">Find Your Safe Route Now</h3>
             <div className="relative mb-6">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -120,7 +129,7 @@ const Home = () => {
                     {recentDestinations.map((dest, idx) => (
                       <button
                         key={idx}
-                        className="p-3 bg-gray-100 hover:bg-yellow-100 rounded-lg text-sm font-medium transition-colors"
+                        className="p-3 bg-orange-100 hover:bg-yellow-200 rounded-lg text-sm font-medium transition-colors"
                       >
                         {dest}
                       </button>
@@ -183,7 +192,8 @@ const Home = () => {
         </div>
       </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };
