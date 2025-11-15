@@ -15,7 +15,12 @@ import {
   Shield,
   Users,
   Zap,
-  Share2
+  Share2,
+  Hand,
+  ArrowUp,
+  ArrowDown,
+  ArrowRight,
+  Minus
 } from "lucide-react";
 import heroImage from "@/assets/hero-welcome.jpg";
 
@@ -209,6 +214,75 @@ const Home = () => {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Taxi Hand Sign Guide Section */}
+      <div className="py-16 px-6 bg-orange-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Hand className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Taxi Hand Sign Guide</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Learn the common hand signals used at Gauteng taxi ranks to communicate your destination</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ArrowUp className="w-8 h-8 text-black" />
+              </div>
+              <h3 className="font-semibold mb-2">Point Up</h3>
+              <p className="text-sm text-gray-600">CBD / City Center (Johannesburg, Pretoria)</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ArrowDown className="w-8 h-8 text-black" />
+              </div>
+              <h3 className="font-semibold mb-2">Point Down</h3>
+              <p className="text-sm text-gray-600">Local routes / Nearby areas</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Minus className="w-8 h-8 text-black" />
+              </div>
+              <h3 className="font-semibold mb-2">Flat Hand Down</h3>
+              <p className="text-sm text-gray-600">Short stops / Quick trips</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ArrowRight className="w-8 h-8 text-black" />
+              </div>
+              <h3 className="font-semibold mb-2">Angled Direction</h3>
+              <p className="text-sm text-gray-600">Suburbs (Sandton, Rosebank, etc.)</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-black">✌️</span>
+              </div>
+              <h3 className="font-semibold mb-2">Two Fingers</h3>
+              <p className="text-sm text-gray-600">Major township routes (Soweto, Alexandra)</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-black">👋</span>
+              </div>
+              <h3 className="font-semibold mb-2">Open Palm</h3>
+              <p className="text-sm text-gray-600">Stop / Wait / General attention</p>
+            </div>
+          </div>
+
+          <div className="bg-yellow-100 border-l-4 border-l-orange-500 p-4 rounded">
+            <p className="text-sm text-gray-700">
+              <strong>Disclaimer:</strong> Hand signs may vary by location and taxi rank. Always confirm with local guidance or ask other passengers if unsure. When in doubt, verbally communicate your destination to the taxi driver or queue marshal.
+            </p>
           </div>
         </div>
       </div>
