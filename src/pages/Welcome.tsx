@@ -58,34 +58,20 @@ const Welcome = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA Button */}
+          <div className="flex justify-center">
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-lg px-8"
+              className="text-lg px-12 py-4"
               onClick={() => navigate("/home")}
             >
-              Get Started
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="text-lg px-8 bg-card/50 backdrop-blur-sm"
-              onClick={() => navigate("/home")}
-            >
-              Skip for Now
+              Start Finding Safe Routes
             </Button>
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Already have an account?{" "}
-            <button 
-              onClick={() => navigate("/home")}
-              className="text-primary hover:underline font-medium"
-            >
-              Log In
-            </button>
+            No registration required - Start using SafeRide Finder immediately
           </p>
         </div>
       </div>
