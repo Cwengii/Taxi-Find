@@ -7,6 +7,7 @@ import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import Navigation from "./pages/Navigation";
 import Report from "./pages/Report";
+import HandSigns from "./pages/HandSigns";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/home" element={<Home />} />
           <Route path="/navigation" element={<Navigation />} />
           <Route path="/report" element={<Report />} />
+          <Route path="/hand-signs" element={<HandSigns />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
