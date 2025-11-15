@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
@@ -26,6 +27,7 @@ import heroImage from "@/assets/hero-welcome.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState("");
   const [showDestination, setShowDestination] = useState(false);
 
@@ -201,16 +203,28 @@ const Home = () => {
                           navigator.share({ title: '🚨 EMERGENCY ALERT', text: emergencyMessage });
                         } else {
                           navigator.clipboard.writeText(emergencyMessage);
-                          alert('🚨 PANIC ALERT ACTIVATED!\n\nEmergency message copied to clipboard.\nShare immediately with family/contacts.\n\nDriver has been notified of safety concern.');
+                          toast({
+                            title: "🚨 PANIC ALERT ACTIVATED!",
+                            description: "Emergency message copied to clipboard. Share immediately with family/contacts.",
+                            variant: "destructive",
+                          });
                         }
                         
                         // Simulate driver notification
                         setTimeout(() => {
-                          alert('✅ Driver has been alerted about passenger safety concern.');
+                          toast({
+                            title: "✅ Driver Notified",
+                            description: "Driver has been alerted about passenger safety concern.",
+                            variant: "default",
+                          });
                         }, 2000);
                       });
                     } else {
-                      alert('🚨 PANIC ALERT ACTIVATED!\n\nLocation services unavailable.\nPlease call emergency contacts manually.');
+                      toast({
+                        title: "🚨 PANIC ALERT ACTIVATED!",
+                        description: "Location services unavailable. Please call emergency contacts manually.",
+                        variant: "destructive",
+                      });
                     }
                   }}
                 >
